@@ -1,5 +1,3 @@
->📋  A template README.md for code accompanying a Machine Learning paper
-
 # Multi-agent active perception with prediction rewards
 
 This repository is the reference implementation of [Multi-agent active perception with prediction rewards](https://arxiv.org/abs/2030.12345).
@@ -16,8 +14,6 @@ BiBTeX entry:
   year    = {2020}
 }
 ```
-
->📋  Optional: include a graphic explaining your approach/main result, bibtex entry, link to demos, blog posts and tutorials
 
 ## Requirements
 The code consists of a C++ backend for solving Dec-POMDPs and a Python frontend that implements the APAS algorithm presented in the paper.
@@ -69,4 +65,4 @@ The links are provided below.
 - APAS without adaptation phase *963 MB*
 
 ## Contributing
-Licensed under the Apache 2.0 license - see [LICENSE](LICENSE) for details.
+Licensed under the MIT license - see [LICENSE](LICENSE) for details.
