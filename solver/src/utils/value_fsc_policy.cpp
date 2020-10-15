@@ -17,13 +17,11 @@
 int main(int argc, char** argv) {
   int tstart;
   int tlast;
-  std::size_t num_rollouts;
   unsigned int seed;
 
   namespace po = boost::program_options;
   po::options_description config(
-      "Evaluate value of blind policy in a finite horizon discrete "
-      "(Dec)-rhoPOMDP "
+      "Compute the exact value of a joint policy in a Dec-rhoPOMDP"
       "\nUsage: " +
       std::string(argv[0]) + " [OPTION]... [DPOMDP-FILE]\nOptions");
   config.add_options()("help", "produce help message")(
@@ -31,11 +29,9 @@ int main(int argc, char** argv) {
       "starting time step")("last,l", po::value<int>(&tlast)->default_value(1),
                             "last time step")(
       "files", po::value<std::vector<std::string>>()->multitoken(),
-      "[AGENT0_POLICY] ... [AGENTN_POLICY] policy files to read")(
+      "[AGENT0_POLICY] ... [AGENTN_POLICY] individual policy files")(
       "use-entropy-reward,e", po::bool_switch()->default_value(false),
       "toggle to use expected posterior entropy as final step reward")(
-      "rollouts,r", po::value<std::size_t>(&num_rollouts)->default_value(1),
-      "number of rollouts")(
       "seed,g", po::value<unsigned int>(&seed)->default_value(1234567890),
       "RNG seed");
 

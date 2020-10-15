@@ -82,11 +82,6 @@ add_executable(fsc_policy_endstates
 				)
 target_link_libraries(fsc_policy_endstates ${Boost_LIBRARIES} MADPWrapper Eigen3::Eigen)
 
-add_executable(improve_fsc
-				src/utils/improve_fsc.cpp
-				)
-target_link_libraries(improve_fsc ${Boost_LIBRARIES} MADPWrapper Eigen3::Eigen)
-
 add_executable(improve_fsc_preds
 				src/utils/improve_fsc_preds.cpp
 				)

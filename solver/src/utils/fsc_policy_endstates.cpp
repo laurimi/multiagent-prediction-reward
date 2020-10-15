@@ -27,8 +27,7 @@ int main(int argc, char** argv) {
 
   namespace po = boost::program_options;
   po::options_description config(
-      "Evaluate value of pure policy in a finite horizon discrete "
-      "Dec-rhoPOMDP "
+      "Sample end states under a given joint policy in a Dec-rhoPOMDP"
       "\nUsage: " +
       std::string(argv[0]) + " [OPTION]... [DPOMDP-FILE]\nOptions");
   config.add_options()("help", "produce help message")(

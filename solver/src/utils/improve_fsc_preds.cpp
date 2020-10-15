@@ -44,8 +44,6 @@ void parseCSV(const std::string& file, std::vector<std::vector<double>>& to) {
   }
 }
 
-
-
 int main(int argc, char** argv) {
   int tstart;
   int tlast;
@@ -59,8 +57,7 @@ int main(int argc, char** argv) {
 
   namespace po = boost::program_options;
   po::options_description config(
-      "Evaluate value of blind policy in a finite horizon discrete "
-      "(Dec)-rhoPOMDP "
+      "Solve a finite horizon discrete Dec-rhoPOMDP"
       "\nUsage: " +
       std::string(argv[0]) + " [OPTION]... [DPOMDP-FILE]\nOptions");
   config.add_options()("help", "produce help message")(
@@ -174,6 +171,7 @@ int main(int argc, char** argv) {
     return 0.0;
   };
 
+  // exact value computation is too slow, better estimate policy value
   // auto best_policy_value = npgi::value(
   //     d, initial_state_distribution,
   //     npgi::policy::FSCPolicy(tstart, tlast, fscs, d.A(), d.Z()),
@@ -207,6 +205,7 @@ int main(int argc, char** argv) {
 
     auto improved_policy = npgi::policy::FSCPolicy(
         tstart, tlast, out.local_policy_graphs, d.A(), d.Z());
+    // exact value computation is too slow, better estimate policy value
     // auto value = npgi::value(d, initial_state_distribution, improved_policy,
     //                          final_reward);
     auto value = npgi::estimate_value(d, initial_state_distribution,
