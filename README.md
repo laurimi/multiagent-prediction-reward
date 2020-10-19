@@ -58,11 +58,31 @@ Results will be stored in the subfolder `results`. There you will find the follo
 - `policy_values.npy` loadable numpy file with the value of the policy foudn at each iteration of APAS
 - Subfolders `pgi_XY` containing the best individual policies and all individual policies considered by policy graph improvement for each agent at iteration `XY` of APAS. The files are in `.dot` format and can be visualized using `xdot`.
 
+All values stored are exact.
+The approximation by a piecewise linear function is *not* used when evaluating the policies, it is only used when planning.
+
 ## Results
-You can download the outputs as indicated above that contain the raw data corresponding to the results presented in the paper and supplementary material.
-The links are provided below.
-- [APAS *730 MB*](https://drive.google.com/file/d/1RtzyAf_7iPBloEkzCUXlcEUH6X7ITMJw/view?usp=sharing)
-- [APAS without adaptation phase *963 MB*](https://drive.google.com/file/d/1WzYZCcMwBdKsMPK1fMA48h6YEaUzUD8a/view?usp=sharing)
+The archives linked below contain the raw data corresponding to the results presented in the paper and supplementary material.
+The format is similar to that described above.
+- [APAS (*730 MB download*)](https://drive.google.com/file/d/1RtzyAf_7iPBloEkzCUXlcEUH6X7ITMJw/view?usp=sharing)
+- [APAS without adaptation phase (*963 MB download*)](https://drive.google.com/file/d/1WzYZCcMwBdKsMPK1fMA48h6YEaUzUD8a/view?usp=sharing)
+
+## Solving your own problems or using different final rewards
+The software uses the parser from the MADP toolbox to read problems formatted as `.dpomdp` files.
+You can specify your own problems in this format.
+See [this example problem](https://github.com/MADPToolbox/MADP/blob/master/problems/dectiger.dpomdp) for a description of the format.
+
+However, note that the `.dpomdp` format does not allow specifying rewards that are not linear in the belief state (i.e., functions of the hidden state and actions).
+The planner software implicitly assumes you wish to solve a Dec-rhoPOMDP with negative entropy as the final reward.
+If you want to use a different final reward, modify `DecPOMDPConversions.hpp`.
+You will need to add functionality for getting the linearizing hyperplanes of your (convex and bounded) final reward function; see `LinearizedNegEntropy.hpp` for an example.
+
+## Technical details
+The conversion from Definition 3 in the paper is implemented in `DecPOMDPConversions.hpp`.
+The main part of the Dec-POMDP solver is implemented in `BackwardPass.hpp`.
+We use particle-based PGI, however modified with UCB1 applied to optimize node configurations.
 
 ## Contributing
+Pull requests are welcome, although there are no plans for active further development as of now.
+
 Licensed under the MIT license - see [LICENSE](LICENSE) for details.
