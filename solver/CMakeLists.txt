@@ -14,8 +14,8 @@ if(MADPPATH)
 else()
 	include(ExternalProject)
 	ExternalProject_Add(project_madp
-		GIT_REPOSITORY	   https://github.com/laurimi/MADP
-		GIT_TAG			   75b4cec91ac03e5bb85d4b5328601178daee1ba7
+		GIT_REPOSITORY	   https://github.com/MADPToolbox/MADP
+		GIT_TAG			   a6c1bb7ca18236fc7214d05c6c08dd7d515c4e96
 	    PREFIX            ${EXT_DIR}/madp
 	    BUILD_IN_SOURCE	  1
 	    CONFIGURE_COMMAND sh <SOURCE_DIR>/autogen.sh && <SOURCE_DIR>/configure --prefix=<INSTALL_DIR>
