@@ -1,6 +1,6 @@
 # Multi-agent active perception with prediction rewards
 
-This repository is the reference implementation of [Multi-agent active perception with prediction rewards](https://arxiv.org/abs/2030.12345).
+This repository is the reference implementation of the paper "Multi-agent active perception with prediction rewards" (Link coming soon!).
 
 If you find the work useful, please cite it as:
 Mikko Lauri and Frans Oliehoek. "Multi-agent active perception with prediction actions", in Advances in Neural Information Processing Systems (NeurIPS), 2020.
