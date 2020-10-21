@@ -22,7 +22,7 @@ Follow the steps below to install necessary requirements and compile the planner
 ### System libraries
 Install the required system libraries on a Ubuntu system by:
 ```
-sudo apt-get install libboost-dev libeigen3-dev
+sudo apt-get install libboost-all-dev libeigen3-dev
 ```
 Additionally, you need a C++ compiler that supports C++17, and CMake version 3.0 or later.
 
