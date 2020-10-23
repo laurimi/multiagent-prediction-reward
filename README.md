@@ -1,6 +1,6 @@
 # Multi-agent active perception with prediction rewards
 
-This repository is the reference implementation of the paper "Multi-agent active perception with prediction rewards" (Link coming soon!).
+This repository is the reference implementation of the paper ["Multi-agent active perception with prediction rewards"](https://arxiv.org/abs/2010.11835).
 
 ![Conceptual overview](https://github.com/laurimi/multiagent-prediction-reward/blob/main/imgs/thumbnail.png?raw=true)
 
