@@ -11,7 +11,7 @@ Mikko Lauri and Frans Oliehoek. "Multi-agent active perception with prediction a
 BiBTeX entry:
 ```
 @inproceedings{lauri2020multiagent,
-  author    = {Mikko Lauri and Frans A.~Oliehoek}, 
+  author    = {Mikko Lauri and Frans A. Oliehoek}, 
   title     = {Multi-agent active perception with prediction actions},
   booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
   year    = {2020}
