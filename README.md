@@ -4,9 +4,10 @@ This repository is the reference implementation of the paper ["Multi-agent activ
 
 ![Conceptual overview](https://github.com/laurimi/multiagent-prediction-reward/blob/main/imgs/thumbnail.png?raw=true)
 
+Some further information is available in [this blog post](https://laurimi.github.io/research/2020/10/23/neurips.html).
 
 If you find the work useful, please cite it as:
-Mikko Lauri and Frans Oliehoek. "Multi-agent active perception with prediction actions", in Advances in Neural Information Processing Systems (NeurIPS), 2020.
+Mikko Lauri and Frans A. Oliehoek. "Multi-agent active perception with prediction actions", in Advances in Neural Information Processing Systems (NeurIPS), 2020.
 
 BiBTeX entry:
 ```
